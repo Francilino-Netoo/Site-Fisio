@@ -1,0 +1,2500 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.caixa-principal {
+  height: 100vh;
+  width: 100%;
+  background-size: 30%;
+  background-position: right 100px bottom 100px;
+  background-repeat: no-repeat;
+  background-color: #ebebeb;
+  z-index: 1;
+}
+
+/* Estilo do Menu Lateral */
+.side-menu {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  background-color: #333;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+  z-index: 1000;
+}
+
+.side-menu a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.side-menu a:hover {
+  color: #f1f1f1;
+}
+
+.side-menu .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  display: none; /* Oculto por padrão */
+}
+
+nav {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: linear-gradient(to right, #116574, #c122f1);
+  padding: 0.01% 5%;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 100px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.minha-foto {
+  display: none;
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+  font-size: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.link-menu {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 3px 10px;
+  border-radius: 8px;
+  display: inline-block;
+  line-height: 1.5;
+  text-align: center;
+}
+
+li {
+  display: inline;
+  margin-right: 20px;
+}
+
+li:hover .link-menu,
+.link-menu:hover {
+  color: #00f929;
+  border-color: #f9004d;
+}
+
+/* Contêiner principal */
+.meu-nome {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+/* Contêiner do slider */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Slide individual */
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Slide ativo */
+.slide.active {
+  opacity: 1;
+}
+
+/* Texto sobreposto */
+.slider-text {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 50px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  text-align: center;
+}
+
+/* Setas de navegação */
+.prev,
+.next {
+  position: absolute;
+  bottom: 50%;
+  width: auto;
+  padding: 25px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 40px;
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+
+  z-index: 3;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Dots de navegação */
+.nav-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  background-color: #ffffff;
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #f9004d;
+}
+
+.agendar {
+  text-align: center;
+  margin-top: 10vh;
+}
+
+.agendar h2 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
+  color: #000000;
+  font-size: 36px;
+  margin: 0;
+}
+
+.agendar h2 span {
+  display: inline;
+}
+
+.agendar h2 .fisiolife {
+  color: #008000;
+}
+
+.agendar h2 .fisiolife-live {
+  color: #00ff00;
+}
+
+.agendar h2 a {
+  color: #f9004d;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.agendar h2 a:hover {
+  text-decoration: underline;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  padding: 50px 10%;
+  background-color: #ddd0d0;
+  flex-wrap: wrap;
+}
+
+section img {
+  height: 300px;
+  border-radius: 50%;
+  border: 2px solid #f9004d;
+  margin-right: 40px;
+  margin-bottom: 20px;
+  margin-top: 80px;
+}
+section#sobre p {
+  margin-bottom: 15px;
+}
+
+section#sobre ul {
+  margin-bottom: 10px;
+}
+
+section#sobre ul li {
+  margin-bottom: 10px;
+}
+section#sobre ul li strong {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+section div h2 {
+  color: #000000;
+  font-size: 40px;
+}
+
+section div p {
+  color: #474041;
+  font-size: 20px;
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+section div button {
+  color: #ffffff;
+  background-color: #f9004d;
+  height: 50px;
+  width: 180px;
+  font-size: 18px;
+  border: none;
+  border-radius: 26px;
+}
+
+section div button:hover {
+  color: #000;
+  border: 3px solid #f9004d;
+  transition: 0.5s;
+}
+
+/*********************************/
+.projetos {
+  padding-top: 50px;
+  padding-bottom: 100px;
+  position: relative;
+  text-align: center; /* Centraliza o texto e os elementos dentro da seção projetos */
+}
+
+.fundo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.fundo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.projetos h2 {
+  font-size: 50px;
+  color: #ffffff;
+  margin-bottom: 50px;
+  margin-top: 90px;
+}
+
+/* Estilo para o contêiner dos cartões */
+.cards-projetos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px 1px;
+  justify-items: center;
+  margin-top: 100px;
+}
+
+/* Estilo para cada cartão */
+.cards {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(193, 34, 241, 0.7),
+    0 4px 8px rgba(34, 34, 180, 0.7);
+  background-color: #fff;
+}
+
+/* Contêiner da imagem dentro do cartão */
+.cards a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ajusta a imagem para preencher o contêiner */
+  display: block;
+}
+
+/* Estilo para o texto sobre a imagem */
+.cards h5 {
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  font-size: 25px;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+/************************************* */
+
+.video-clinica {
+  display: flex;
+  gap: 20px; /* Espaçamento entre o vídeo e o mapa */
+  align-items: flex-start; /* Alinha o vídeo e o mapa no topo */
+}
+.video iframe {
+  width: 90%; /* Faz o iframe ocupar toda a largura do contêiner */
+  height: 500px; /* Faz o iframe ocupar toda a altura do contêiner */
+  border: 0; /* Remove a borda do iframe */
+}
+.video,
+.map {
+  flex: 1; /* Faz o vídeo e o mapa ocuparem a mesma largura */
+}
+.map h2 {
+  margin-top: 10px;
+  font-size: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+.map a {
+  text-decoration: none; /* Remove o sublinhado do link */
+  color: #000; /* Define a cor padrão do texto do link */
+  display: block; /* Garante que o link ocupe a largura do elemento pai */
+  transition: color 0.3s; /* Adiciona uma transição suave na cor */
+}
+
+.map a:hover {
+  color: #007bff; /* Cor do texto quando o mouse passa sobre o link */
+}
+
+iframe {
+  max-width: 100%; /* Garante que o iframe não exceda a largura do contêiner */
+  height: 500px; /* Ajusta a altura do iframe para manter a proporção */
+}
+
+/************************************* */
+footer {
+  background-color: #ffffff;
+  padding-top: 100px;
+  padding-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+footer h5 {
+  color: #000;
+  font-size: 30px;
+}
+
+footer p {
+  color: #000;
+  font-size: 18px;
+  margin-top: 14px;
+  margin-bottom: 30px;
+}
+
+.social {
+  display: flex;
+  gap: 20px;
+}
+
+.social img {
+  height: 50px;
+  border-radius: 50%;
+}
+
+.social a {
+  background-color: #f9004d;
+  padding: 15px;
+  display: flex;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+
+.social a:hover {
+  transform: scale(1.3);
+  transition: 0.5s;
+}
+
+/*********************************/
+/*********************************/
+/*********************************/
+/* Media queries para ajustar o layout em diferentes tamanhos de tela */
+@media (max-width: 2600px) {
+  .cards-projetos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .agendar {
+    margin-top: 5vh; /* Ajuste a margem superior em telas menores */
+  }
+  /* Contêiner do slider */
+  .slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: opacity 1s ease-in-out;
+  }
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta a imagem para preencher o contêiner */
+  }
+  /* Slide individual */
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (max-width: 1200px) {
+  .cards-projetos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .agendar {
+    margin-top: 5vh; /* Ajuste a margem superior em telas menores */
+  }
+}
+
+@media (max-width: 900px) {
+  .cards-projetos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .agendar {
+    margin-top: 5vh; /* Ajuste a margem superior em telas menores */
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: linear-gradient(to right, #116574, #c122f1);
+    padding: 0.01% 2%;
+    z-index: 1000;
+  }
+  .logo img {
+    height: 50px;
+    margin-top: 20px;
+  }
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta a imagem para preencher o contêiner */
+  }
+  .minha-foto {
+    display: none;
+  }
+
+  li {
+    list-style: none;
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 1px;
+    cursor: pointer;
+  }
+
+  .link-menu {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 1px 1px;
+    border-radius: 4px;
+    display: inline-block;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  li:hover .link-menu,
+  .link-menu:hover {
+    color: #00f929;
+    border-color: #f9004d;
+  }
+
+  /* Contêiner principal */
+  .meu-nome {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+  }
+
+  /* Contêiner do slider */
+  .slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: opacity 1s ease-in-out;
+  }
+
+  /* Slide individual */
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Garante que o conteúdo não exceda o slide */
+  }
+
+  /* Imagem dentro do slide */
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem cubra o slide sem distorção */
+  }
+
+  /* Slide ativo */
+  .slide.active {
+    opacity: 1;
+  }
+
+  /* Texto sobreposto */
+  .slider-text {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    text-align: center;
+  }
+
+  /* Setas de navegação */
+  .prev,
+  .next {
+    position: absolute;
+    bottom: 50%;
+    width: auto;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    z-index: 3;
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+
+  /* Dots de navegação */
+  .nav-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+
+  .dot {
+    background-color: #ffffff;
+    border-radius: 50%;
+    height: 5px;
+    width: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .dot.active {
+    background-color: #f9004d;
+  }
+
+  .agendar {
+    text-align: center;
+    margin-top: 10vh;
+  }
+
+  .agendar h2 {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 700;
+    color: #000000;
+    font-size: 15px;
+    margin: 0;
+  }
+
+  .agendar h2 span {
+    display: inline;
+  }
+
+  .agendar h2 .fisiolife {
+    color: #008000;
+  }
+
+  .agendar h2 .fisiolife-live {
+    color: #00ff00;
+  }
+
+  .agendar h2 a {
+    color: #f9004d;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .agendar h2 a:hover {
+    text-decoration: underline;
+  }
+
+  section {
+    display: flex;
+    align-items: center;
+    padding: 50px 10%;
+    background-color: #ddd0d0;
+    flex-wrap: wrap;
+  }
+
+  section img {
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #f9004d;
+    margin-right: 40px;
+    margin-bottom: 20px;
+    margin-top: 45px;
+  }
+  section#sobre p {
+    margin-bottom: 5px;
+  }
+
+  section#sobre ul {
+    margin-bottom: 5px;
+  }
+
+  section#sobre ul li {
+    margin-bottom: 10px;
+  }
+  section#sobre ul li strong {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  section div h2 {
+    color: #000000;
+    font-size: 20px;
+  }
+
+  section div p {
+    color: #474041;
+    font-size: 15px;
+    margin-top: 15px;
+    margin-bottom: 80px;
+  }
+
+  section div button {
+    color: #ffffff;
+    background-color: #f9004d;
+    height: 30px;
+    width: 100px;
+    font-size: 12px;
+    border: none;
+    border-radius: 5x;
+  }
+
+  section div button:hover {
+    color: #000;
+    border: 3px solid #f9004d;
+    transition: 0.5s;
+  }
+
+  /*********************************/
+  .projetos {
+    padding-top: 50px;
+    padding-bottom: 100px;
+    position: relative;
+    text-align: center; /* Centraliza o texto e os elementos dentro da seção projetos */
+  }
+
+  .fundo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .fundo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .projetos h2 {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 50px;
+    margin-top: 60px;
+  }
+
+  /* Estilo para o contêiner dos cartões */
+  .cards-projetos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px 1px;
+    justify-items: center;
+    margin-top: 100px;
+  }
+
+  /* Estilo para cada cartão */
+  .cards {
+    width: 100%;
+    max-width: 130px;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(193, 34, 241, 0.7),
+      0 4px 8px rgba(34, 34, 180, 0.7);
+    background-color: #fff;
+  }
+
+  /* Contêiner da imagem dentro do cartão */
+  .cards .a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .cards .a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8); /* Ajuste o fundo se necessário */
+    border: 2px solid #f9004d;
+    border-radius: 10px;
+  }
+
+  .cards .a:hover {
+    transform: scale(1.05); /* Adiciona um efeito de zoom ao passar o mouse */
+    transition: transform 0.3s ease;
+  }
+
+  .cards h4 {
+    font-family: "Montserrat", sans-serif;
+    color: #474041;
+    font-size: 10px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5); /* Fundo preto semitransparente */
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  .cards h5 {
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    font-size: 16px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+  .cards p {
+    font-family: "Montserrat", sans-serif;
+    color: #474041;
+    font-size: 16px;
+  }
+  /************************************* */
+
+  .video-clinica {
+    display: flex;
+    gap: 20px; /* Espaçamento entre o vídeo e o mapa */
+    align-items: center; /* Alinha o vídeo e o mapa no topo */
+    flex-direction: column;
+  }
+  .video iframe {
+    width: 100%; /* Faz o iframe ocupar toda a largura do contêiner */
+    height: 200px; /* Faz o iframe ocupar toda a altura do contêiner */
+    border: 0; /* Remove a borda do iframe */
+  }
+  .map iframe {
+    width: 100%; /* Faz o iframe ocupar toda a largura do contêiner */
+    height: 200px; /* Faz o iframe ocupar toda a altura do contêiner */
+    border: 0; /* Remove a borda do iframe */
+  }
+  .video,
+  .map {
+    flex: 1; /* Faz o vídeo e o mapa ocuparem a mesma largura */
+  }
+  .map h2 {
+    margin-top: 10px;
+    font-size: 12px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+  .map a {
+    text-decoration: none; /* Remove o sublinhado do link */
+    color: #000; /* Define a cor padrão do texto do link */
+    display: block; /* Garante que o link ocupe a largura do elemento pai */
+    transition: color 0.3s; /* Adiciona uma transição suave na cor */
+  }
+
+  .map a:hover {
+    color: #007bff; /* Cor do texto quando o mouse passa sobre o link */
+  }
+
+  /************************************* */
+  footer {
+    background-color: #ffffff;
+    padding-top: 70px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  footer h5 {
+    color: #000;
+    font-size: 20px;
+  }
+
+  footer p {
+    color: #000;
+    font-size: 13px;
+    margin-top: 14px;
+    margin-bottom: 20px;
+  }
+
+  .social {
+    display: flex;
+    gap: 20px;
+  }
+
+  .social img {
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .social a {
+    background-color: #f9004d;
+    padding: 20px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+  }
+
+  .social a:hover {
+    transform: scale(1.3);
+    transition: 0.5s;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: linear-gradient(to right, #116574, #c122f1);
+    padding: 2%;
+    z-index: 1000;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta a imagem para preencher o contêiner */
+  }
+
+  /* Estilo do Menu Lateral */
+  .side-menu {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: -250px; /* Inicialmente escondido à esquerda */
+    background-color: #333;
+    width: 50%;
+    background: linear-gradient(to right, #116574, #c122f1);
+    overflow-x: hidden;
+    padding-top: 60px;
+    z-index: 1000; /* Para garantir que o menu fique sobre outros elementos */
+    transition: right 0.5s;
+  }
+  .hidden {
+    display: none;
+  }
+
+  .side-menu a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    display: block;
+    transition: color 0.3s;
+  }
+  .openbtn:hover {
+    background: linear-gradient(to right, #ffffff, #ffffff);
+    color: #0e0d0d; /* Cor do texto ao passar o mouse */
+  }
+  .side-menu a:hover {
+    color: #f1f1f1;
+  }
+
+  .side-menu .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  .openbtn {
+    font-size: 40px;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    display: none; /* Oculto por padrão */
+    transition: color 0.3s;
+    border-radius: 5px;
+  }
+  .openbtn {
+    display: block; /* Mostra o botão para abrir o menu lateral em telas pequenas */
+    background: linear-gradient(to right, #fff, #fff);
+    color: #000; /* Cor do texto ao passar o mouse */
+  }
+
+  .side-menu {
+    left: 0; /* Mostra o menu lateral quando aberto */
+  }
+  .side-menu .logo {
+    margin-left: 20px;
+    text-align: center; /* Centraliza a imagem horizontalmente */
+    margin-bottom: 20px; /* Espaçamento abaixo da imagem */
+  }
+
+  .side-menu .logo img {
+    height: 80px; /* Ajuste a altura conforme necessário */
+    margin-top: 10px;
+  }
+
+  .minha-foto {
+    display: none;
+  }
+
+  li {
+    list-style: none;
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 1px;
+    cursor: pointer;
+  }
+
+  .link-menu {
+    text-decoration: none;
+    color: #ffffff;
+    border: 2px solid;
+    padding: 1px 1px;
+    border-radius: 4px;
+    display: none;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  li:hover .link-menu,
+  .link-menu:hover {
+    color: #00f929;
+    border-color: #f9004d;
+  }
+
+  /* Contêiner principal */
+  .meu-nome {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+  }
+
+  /* Contêiner do slider */
+  .slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: opacity 1s ease-in-out;
+  }
+
+  /* Slide individual */
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Garante que o conteúdo não exceda o slide */
+  }
+
+  /* Imagem dentro do slide */
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem cubra o slide sem distorção */
+  }
+
+  /* Slide ativo */
+  .slide.active {
+    opacity: 1;
+  }
+
+  /* Texto sobreposto */
+  .slider-text {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    text-align: center;
+  }
+
+  /* Setas de navegação */
+  .prev,
+  .next {
+    position: absolute;
+    bottom: 50%;
+    width: auto;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    z-index: 3;
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+
+  /* Dots de navegação */
+  .nav-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+
+  .dot {
+    background-color: #ffffff;
+    border-radius: 50%;
+    height: 5px;
+    width: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .dot.active {
+    background-color: #f9004d;
+  }
+
+  .agendar {
+    text-align: center;
+    margin-top: 10vh;
+  }
+
+  .agendar h2 {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 700;
+    color: #000000;
+    font-size: 12px;
+    margin: 0;
+  }
+
+  .agendar h2 span {
+    display: inline;
+  }
+
+  .agendar h2 .fisiolife {
+    color: #008000;
+  }
+
+  .agendar h2 .fisiolife-live {
+    color: #00ff00;
+  }
+
+  .agendar h2 a {
+    color: #f9004d;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .agendar h2 a:hover {
+    text-decoration: underline;
+  }
+
+  section {
+    display: flex;
+    align-items: center;
+    padding: 50px 10%;
+    background-color: #ddd0d0;
+    flex-wrap: wrap;
+  }
+
+  section img {
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #f9004d;
+    margin-right: 40px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+  }
+  section#sobre p {
+    margin-bottom: 5px;
+  }
+
+  section#sobre ul {
+    margin-bottom: 5px;
+  }
+
+  section#sobre ul li {
+    margin-bottom: 10px;
+  }
+  section#sobre ul li strong {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  section div h2 {
+    color: #000000;
+    font-size: 20px;
+  }
+
+  section div p {
+    color: #474041;
+    font-size: 15px;
+    margin-top: 15px;
+    margin-bottom: 80px;
+  }
+
+  section div button {
+    color: #ffffff;
+    background-color: #f9004d;
+    height: 30px;
+    width: 100px;
+    font-size: 12px;
+    border: none;
+    border-radius: 5x;
+  }
+
+  section div button:hover {
+    color: #000;
+    border: 3px solid #f9004d;
+    transition: 0.5s;
+  }
+
+  /*********************************/
+  .projetos {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    position: relative;
+    text-align: center; /* Centraliza o texto e os elementos dentro da seção projetos */
+  }
+
+  .fundo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .fundo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .projetos h2 {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+
+  /* Estilo para o contêiner dos cartões */
+  .cards-projetos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 1px;
+    justify-items: center;
+    margin-top: 80px;
+  }
+
+  /* Estilo para cada cartão */
+  .cards {
+    width: 100%;
+    max-width: 150px;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(193, 34, 241, 0.7),
+      0 4px 8px rgba(34, 34, 180, 0.7);
+    background-color: #fff;
+  }
+
+  /* Contêiner da imagem dentro do cartão */
+  .cards .a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .cards .a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8); /* Ajuste o fundo se necessário */
+    border: 2px solid #f9004d;
+    border-radius: 10px;
+  }
+
+  .cards .a:hover {
+    transform: scale(1.05); /* Adiciona um efeito de zoom ao passar o mouse */
+    transition: transform 0.3s ease;
+  }
+
+  .cards h4 {
+    font-family: "Montserrat", sans-serif;
+    color: #474041;
+    font-size: 10px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5); /* Fundo preto semitransparente */
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  .cards h5 {
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    font-size: 16px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+  .cards p {
+    font-family: "Montserrat", sans-serif;
+    color: #474041;
+    font-size: 16px;
+  }
+  /************************************* */
+
+  .video-clinica {
+    display: flex;
+    gap: 20px; /* Espaçamento entre o vídeo e o mapa */
+    align-items: center; /* Alinha o vídeo e o mapa no topo */
+    flex-direction: column;
+  }
+  .video iframe {
+    width: 100%; /* Faz o iframe ocupar toda a largura do contêiner */
+    height: 200px; /* Faz o iframe ocupar toda a altura do contêiner */
+    border: 0; /* Remove a borda do iframe */
+  }
+  .map iframe {
+    width: 100%; /* Faz o iframe ocupar toda a largura do contêiner */
+    height: 200px; /* Faz o iframe ocupar toda a altura do contêiner */
+    border: 0; /* Remove a borda do iframe */
+  }
+  .video,
+  .map {
+    flex: 1; /* Faz o vídeo e o mapa ocuparem a mesma largura */
+  }
+  .map h2 {
+    margin-top: 10px;
+    font-size: 12px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+  .map a {
+    text-decoration: none; /* Remove o sublinhado do link */
+    color: #000; /* Define a cor padrão do texto do link */
+    display: block; /* Garante que o link ocupe a largura do elemento pai */
+    transition: color 0.3s; /* Adiciona uma transição suave na cor */
+  }
+
+  .map a:hover {
+    color: #007bff; /* Cor do texto quando o mouse passa sobre o link */
+  }
+
+  /************************************* */
+  footer {
+    background-color: #ffffff;
+    padding-top: 70px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  footer h5 {
+    color: #000;
+    font-size: 20px;
+  }
+
+  footer p {
+    color: #000;
+    font-size: 10px;
+    margin-top: 14px;
+    margin-bottom: 20px;
+  }
+
+  .social {
+    display: flex;
+    gap: 20px;
+  }
+
+  .social img {
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .social a {
+    background-color: #f9004d;
+    padding: 20px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+  }
+
+  .social a:hover {
+    transform: scale(1.3);
+    transition: 0.5s;
+  }
+}
+
+@media (max-width: 360px) {
+  nav {
+    display: none;
+  }
+  .caixa-principal {
+    height: 80vh;
+  }
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta a imagem para preencher o contêiner */
+  }
+
+  /* Estilo do Menu Lateral */
+  .side-menu {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: -250px; /* Inicialmente escondido à esquerda */
+    background-color: #333;
+    width: 50%;
+    background: linear-gradient(to right, #116574, #c122f1);
+    overflow-x: hidden;
+    padding-top: 60px;
+    z-index: 1000; /* Para garantir que o menu fique sobre outros elementos */
+    transition: right 0.5s;
+  }
+  .hidden {
+    display: none;
+  }
+
+  .side-menu a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    display: block;
+    transition: color 0.3s;
+  }
+  .openbtn:hover {
+    background: linear-gradient(to right, #fff, #fff);
+    color: #000; /* Cor do texto ao passar o mouse */
+  }
+  .side-menu a:hover {
+    color: #f1f1f1;
+  }
+
+  .side-menu .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  .openbtn {
+    font-size: 35px;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    display: none; /* Oculto por padrão */
+    transition: color 0.3s;
+    border-radius: 5px;
+  }
+  .openbtn {
+    display: block; /* Mostra o botão para abrir o menu lateral em telas pequenas */
+    background: linear-gradient(to right, #fff, #fff);
+    color: #000; /* Cor do texto ao passar o mouse */
+  }
+
+  .side-menu {
+    left: 0; /* Mostra o menu lateral quando aberto */
+  }
+  .side-menu .logo {
+    margin-left: 20px;
+    text-align: center; /* Centraliza a imagem horizontalmente */
+    margin-bottom: 20px; /* Espaçamento abaixo da imagem */
+  }
+
+  .side-menu .logo img {
+    height: 80px; /* Ajuste a altura conforme necessário */
+    margin-top: 10px;
+  }
+
+  .minha-foto {
+    display: none;
+  }
+
+  li {
+    list-style: none;
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 1px;
+    cursor: pointer;
+  }
+
+  .link-menu {
+    text-decoration: none;
+    color: #ffffff;
+    border: 2px solid;
+    padding: 1px 1px;
+    border-radius: 4px;
+    display: none;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  li:hover .link-menu,
+  .link-menu:hover {
+    color: #00f929;
+    border-color: #f9004d;
+  }
+
+  /* Contêiner principal */
+  .meu-nome {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+  }
+
+  /* Contêiner do slider */
+  .slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: opacity 1s ease-in-out;
+  }
+
+  /* Slide individual */
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Garante que o conteúdo não exceda o slide */
+  }
+
+  /* Imagem dentro do slide */
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem cubra o slide sem distorção */
+  }
+
+  /* Slide ativo */
+  .slide.active {
+    opacity: 1;
+  }
+
+  /* Texto sobreposto */
+  .slider-text {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    text-align: center;
+  }
+
+  /* Setas de navegação */
+  .prev,
+  .next {
+    position: absolute;
+    bottom: 50%;
+    width: auto;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    z-index: 3;
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+
+  /* Dots de navegação */
+  .nav-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+
+  .dot {
+    background-color: #ffffff;
+    border-radius: 50%;
+    height: 5px;
+    width: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .dot.active {
+    background-color: #f9004d;
+  }
+
+  .agendar {
+    text-align: center;
+    margin-top: 10vh;
+  }
+
+  .agendar h2 {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 700;
+    color: #000000;
+    font-size: 14px;
+    margin: 20px;
+  }
+
+  .agendar h2 span {
+    display: inline;
+  }
+
+  .agendar h2 .fisiolife {
+    color: #008000;
+  }
+
+  .agendar h2 .fisiolife-live {
+    color: #00ff00;
+  }
+
+  .agendar h2 a {
+    color: #f9004d;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .agendar h2 a:hover {
+    text-decoration: underline;
+  }
+
+  section {
+    display: flex;
+    align-items: center;
+    padding: 50px 10%;
+    background-color: #ddd0d0;
+    flex-wrap: wrap;
+  }
+
+  section img {
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #f9004d;
+    margin-right: 40px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+  }
+  section#sobre p {
+    margin-bottom: 5px;
+  }
+
+  section#sobre ul {
+    margin-bottom: 5px;
+  }
+
+  section#sobre ul li {
+    margin-bottom: 10px;
+  }
+  section#sobre ul li strong {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  section div h2 {
+    color: #000000;
+    font-size: 20px;
+  }
+
+  section div p {
+    color: #474041;
+    font-size: 15px;
+    margin-top: 15px;
+    margin-bottom: 80px;
+  }
+
+  section div button {
+    color: #ffffff;
+    background-color: #f9004d;
+    height: 30px;
+    width: 100px;
+    font-size: 12px;
+    border: none;
+    border-radius: 5x;
+  }
+
+  section div button:hover {
+    color: #000;
+    border: 3px solid #f9004d;
+    transition: 0.5s;
+  }
+
+  /*********************************/
+  .projetos {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    text-align: center; /* Centraliza o texto e os elementos dentro da seção projetos */
+  }
+
+  .fundo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .fundo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .projetos h2 {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 30px;
+    margin-top: 40px;
+  }
+
+  /* Estilo para o contêiner dos cartões */
+  .cards-projetos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 1px;
+    justify-items: center;
+    margin-top: 80px;
+  }
+
+  /* Estilo para cada cartão */
+  .cards {
+    width: 100%;
+    max-width: 150px;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(193, 34, 241, 0.7),
+      0 4px 8px rgba(34, 34, 180, 0.7);
+    background-color: #fff;
+  }
+
+  /* Contêiner da imagem dentro do cartão */
+  .cards .a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .cards .a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8); /* Ajuste o fundo se necessário */
+    border: 2px solid #f9004d;
+    border-radius: 10px;
+  }
+
+  .cards .a:hover {
+    transform: scale(1.05); /* Adiciona um efeito de zoom ao passar o mouse */
+    transition: transform 0.3s ease;
+  }
+
+  .cards h4 {
+    font-family: "Montserrat", sans-serif;
+    color: #474041;
+    font-size: 10px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5); /* Fundo preto semitransparente */
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  .cards h5 {
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    font-size: 16px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+  .cards p {
+    font-family: "Montserrat", sans-serif;
+    color: #474041;
+    font-size: 16px;
+  }
+  /************************************* */
+
+  .video-clinica {
+    display: flex;
+    gap: 20px; /* Espaçamento entre o vídeo e o mapa */
+    align-items: center; /* Alinha o vídeo e o mapa no topo */
+    flex-direction: column;
+  }
+  .video iframe {
+    width: 100%; /* Faz o iframe ocupar toda a largura do contêiner */
+    height: 200px; /* Faz o iframe ocupar toda a altura do contêiner */
+    border: 0; /* Remove a borda do iframe */
+  }
+  .map iframe {
+    width: 100%; /* Faz o iframe ocupar toda a largura do contêiner */
+    height: 200px; /* Faz o iframe ocupar toda a altura do contêiner */
+    border: 0; /* Remove a borda do iframe */
+  }
+  .video,
+  .map {
+    flex: 1; /* Faz o vídeo e o mapa ocuparem a mesma largura */
+  }
+  .map h2 {
+    margin-top: 10px;
+    font-size: 12px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+  .map a {
+    text-decoration: none; /* Remove o sublinhado do link */
+    color: #000; /* Define a cor padrão do texto do link */
+    display: block; /* Garante que o link ocupe a largura do elemento pai */
+    transition: color 0.3s; /* Adiciona uma transição suave na cor */
+  }
+
+  .map a:hover {
+    color: #007bff; /* Cor do texto quando o mouse passa sobre o link */
+  }
+
+  /************************************* */
+  footer {
+    background-color: #ffffff;
+    padding-top: 70px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  footer h5 {
+    color: #000;
+    font-size: 20px;
+  }
+
+  footer p {
+    color: #000;
+    text-align: center;
+    font-size: 14px;
+    margin: 40px;
+    margin-top: 14px;
+    margin-bottom: 30px;
+  }
+
+  .social {
+    display: flex;
+    gap: 20px;
+  }
+
+  .social img {
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  .social a {
+    background-color: #f9004d;
+    padding: 20px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+  }
+
+  .social a:hover {
+    transform: scale(1.3);
+    transition: 0.5s;
+  }
+}
+
+@media (max-width: 320px) {
+  nav {
+    display: none;
+  }
+  .caixa-principal {
+    height: 80vh;
+  }
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta a imagem para preencher o contêiner */
+  }
+  /* Estilo do Menu Lateral */
+  .side-menu {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: -250px; /* Inicialmente escondido à esquerda */
+    background-color: #333;
+    width: 10%;
+    background: linear-gradient(to right, #116574, #c122f1);
+    overflow-x: hidden;
+    padding-top: 60px;
+    z-index: 1000; /* Para garantir que o menu fique sobre outros elementos */
+    transition: right 0.5s;
+  }
+  .hidden {
+    display: none;
+  }
+
+  .side-menu a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    display: block;
+    transition: color 0.3s;
+  }
+  .openbtn:hover {
+    background: linear-gradient(to right, #fff, #fff);
+    color: #000; /* Cor do texto ao passar o mouse */
+  }
+  .side-menu a:hover {
+    color: #f1f1f1;
+  }
+
+  .side-menu .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  .openbtn {
+    font-size: 35px;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    display: none; /* Oculto por padrão */
+    transition: color 0.3s;
+    border-radius: 5px;
+  }
+  .openbtn {
+    display: block; /* Mostra o botão para abrir o menu lateral em telas pequenas */
+    background: linear-gradient(to right, #fff, #fff);
+    color: #000; /* Cor do texto ao passar o mouse */
+  }
+
+  .side-menu {
+    left: 0; /* Mostra o menu lateral quando aberto */
+  }
+  .side-menu .logo {
+    margin-left: 20px;
+    text-align: center; /* Centraliza a imagem horizontalmente */
+    margin-bottom: 20px; /* Espaçamento abaixo da imagem */
+  }
+
+  .side-menu .logo img {
+    height: 80px; /* Ajuste a altura conforme necessário */
+    margin-top: 10px;
+  }
+
+  .minha-foto {
+    display: none;
+  }
+
+  li {
+    list-style: none;
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 1px;
+    cursor: pointer;
+  }
+
+  .link-menu {
+    text-decoration: none;
+    color: #ffffff;
+    border: 2px solid;
+    padding: 1px 1px;
+    border-radius: 4px;
+    display: none;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  li:hover .link-menu,
+  .link-menu:hover {
+    color: #00f929;
+    border-color: #f9004d;
+  }
+
+  /* Contêiner principal */
+  .meu-nome {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+  }
+
+  /* Contêiner do slider */
+  .slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: opacity 1s ease-in-out;
+  }
+
+  /* Slide individual */
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Garante que o conteúdo não exceda o slide */
+  }
+
+  /* Imagem dentro do slide */
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem cubra o slide sem distorção */
+  }
+
+  /* Slide ativo */
+  .slide.active {
+    opacity: 1;
+  }
+
+  /* Texto sobreposto */
+  .slider-text {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    text-align: center;
+  }
+
+  /* Setas de navegação */
+  .prev,
+  .next {
+    position: absolute;
+    bottom: 50%;
+    width: auto;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    z-index: 3;
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+
+  /* Dots de navegação */
+  .nav-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+
+  .dot {
+    background-color: #ffffff;
+    border-radius: 50%;
+    height: 5px;
+    width: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .dot.active {
+    background-color: #f9004d;
+  }
+
+  .agendar {
+    text-align: center;
+    margin-top: 3vh;
+  }
+
+  .agendar h2 {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 700;
+    color: #000000;
+    font-size: 14px;
+    margin: 20px;
+  }
+
+  .agendar h2 span {
+    display: inline;
+  }
+
+  .agendar h2 .fisiolife {
+    color: #008000;
+  }
+
+  .agendar h2 .fisiolife-live {
+    color: #00ff00;
+  }
+
+  .agendar h2 a {
+    color: #f9004d;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .agendar h2 a:hover {
+    text-decoration: underline;
+  }
+
+  section {
+    display: flex;
+    align-items: center;
+    padding: 50px 10%;
+    background-color: #ddd0d0;
+    flex-wrap: wrap;
+  }
+
+  section img {
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #f9004d;
+    margin-right: 40px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+  }
+  section#sobre p {
+    margin-bottom: 5px;
+  }
+
+  section#sobre ul {
+    margin-bottom: 5px;
+  }
+
+  section#sobre ul li {
+    margin-bottom: 10px;
+  }
+  section#sobre ul li strong {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  section div h2 {
+    color: #000000;
+    font-size: 20px;
+  }
+
+  section div p {
+    color: #474041;
+    font-size: 15px;
+    margin-top: 15px;
+    margin-bottom: 80px;
+  }
+
+  section div button {
+    color: #ffffff;
+    background-color: #f9004d;
+    height: 30px;
+    width: 100px;
+    font-size: 12px;
+    border: none;
+    border-radius: 5x;
+  }
+
+  section div button:hover {
+    color: #000;
+    border: 3px solid #f9004d;
+    transition: 0.5s;
+  }
+
+  /*********************************/
+  .projetos {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    text-align: center; /* Centraliza o texto e os elementos dentro da seção projetos */
+  }
+
+  .fundo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .fundo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .projetos h2 {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 30px;
+    margin-top: 40px;
+  }
+
+  /* Estilo para o contêiner dos cartões */
+  .cards-projetos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 1px;
+    justify-items: center;
+    margin-top: 80px;
+  }
+
+  /* Estilo para cada cartão */
+  .cards {
+    width: 100%;
+    max-width: 150px;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(193, 34, 241, 0.7),
+      0 4px 8px rgba(34, 34, 180, 0.7);
+    background-color: #fff;
+  }
+
+  /* Contêiner da imagem dentro do cartão */
+  .cards .a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .cards .a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8); /* Ajuste o fundo se necessário */
+    border: 2px solid #f9004d;
+    border-radius: 10px;
+  }
+
+  .cards .a:hover {
+    transform: scale(1.05); /* Adiciona um efeito de zoom ao passar o mouse */
+    transition: transform 0.3s ease;
+  }
+
+  .cards h4 {
+    font-family: "Montserrat", sans-serif;
+    color: #474041;
+    font-size: 10px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5); /* Fundo preto semitransparente */
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  .cards h5 {
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    font-size: 16px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+  .cards p {
+    font-family: "Montserrat", sans-serif;
+    color: #474041;
+    font-size: 16px;
+  }
+  /************************************* */
+
+  .video-clinica {
+    display: flex;
+    gap: 20px; /* Espaçamento entre o vídeo e o mapa */
+    align-items: center; /* Alinha o vídeo e o mapa no topo */
+    flex-direction: column;
+  }
+  .video iframe {
+    width: 100%; /* Faz o iframe ocupar toda a largura do contêiner */
+    height: 200px; /* Faz o iframe ocupar toda a altura do contêiner */
+    border: 0; /* Remove a borda do iframe */
+  }
+  .map iframe {
+    width: 100%; /* Faz o iframe ocupar toda a largura do contêiner */
+    height: 200px; /* Faz o iframe ocupar toda a altura do contêiner */
+    border: 0; /* Remove a borda do iframe */
+  }
+  .video,
+  .map {
+    flex: 1; /* Faz o vídeo e o mapa ocuparem a mesma largura */
+  }
+  .map h2 {
+    margin-top: 10px;
+    font-size: 12px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+  .map a {
+    text-decoration: none; /* Remove o sublinhado do link */
+    color: #000; /* Define a cor padrão do texto do link */
+    display: block; /* Garante que o link ocupe a largura do elemento pai */
+    transition: color 0.3s; /* Adiciona uma transição suave na cor */
+  }
+
+  .map a:hover {
+    color: #007bff; /* Cor do texto quando o mouse passa sobre o link */
+  }
+
+  /************************************* */
+  footer {
+    background-color: #ffffff;
+    padding-top: 70px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  footer h5 {
+    color: #000;
+    font-size: 20px;
+  }
+
+  footer p {
+    color: #000;
+    text-align: center;
+    font-size: 14px;
+    margin: 40px;
+    margin-top: 14px;
+    margin-bottom: 30px;
+  }
+
+  .social {
+    display: flex;
+    gap: 20px;
+  }
+
+  .social img {
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  .social a {
+    background-color: #f9004d;
+    padding: 20px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+  }
+
+  .social a:hover {
+    transform: scale(1.3);
+    transition: 0.5s;
+  }
+}
